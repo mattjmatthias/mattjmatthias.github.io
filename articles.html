@@ -1,0 +1,54 @@
+---
+layout: default
+title: Articles
+permalink: /articles
+footerClass: footer-articles
+---
+
+<div class="section-page articles-section">
+    <a href="\" class="desktop-back-icon">
+        <img class="back-icon" src="/content/images/white-back-icon.png"/>
+    </a>
+    <div class="section-content">
+        <a href="\" class="mobile-back-icon">
+            <img class="back-icon" src="/content/images/white-back-icon.png" />
+        </a>
+        <h2>ARTICLES</h2>
+        <p>
+            These articles cover a range of technical issues, opinions and thoughts about software development and other interests. Downloads and resources are provided freely and articles which are greyed out are waiting to be uploaded.
+        </p>
+        <table class="table">            
+            {% for article in site.data.articles %}   
+                {% assign tags = article.Tags | downcase %}         
+                {% if tags contains "awaiting-upload" %}    
+                    <tr class="awaiting-upload">
+                        <td>
+                            <div class="awaiting-upload-content">
+                                <div class="posted-date">
+                                    {{article.DatePosted|date_to_long_string: "ordinal" }}
+                                </div>
+                                <div class="post-title">
+                                    {{article.Title}}
+                                    <!--<p>AWAITING UPLOAD</p>-->
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>
+                            <a href="{{article.Url}}">
+                                <div class="posted-date">
+                                    {{article.DatePosted|date_to_long_string: "ordinal" }}
+                                </div>
+                                <div class="post-title">
+                                    {{article.Title}}
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+</div>

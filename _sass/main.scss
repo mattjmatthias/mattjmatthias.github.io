@@ -1,0 +1,1470 @@
+﻿---
+---
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+
+
+@mixin footer-background-and-colour($colour, $start-gradient, $end-gradient)
+{
+	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 30px; 
+    margin-top: -$footer-height + 20;
+    height: $footer-height;
+    text-align: center;
+
+    background: $start-gradient; /* Old browsers */
+    background: -moz-linear-gradient(top,  $start-gradient 0%, $end-gradient 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  $start-gradient 0%, $end-gradient 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  $start-gradient 0%, $end-gradient 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start-gradient}', endColorstr='#{$end-gradient}',GradientType=0 ); /* IE6-9 */
+
+	h1 {
+		color: $colour;
+		font-size: 30pt;
+		font-family: "Futura PT Heavy";
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+	
+	a {
+		color: $colour;
+	}
+	
+	:link {
+		color: $colour;
+	}
+	
+	:visited {
+		color: $colour;
+	}
+    
+	:hover{
+		text-decoration: none;
+	}
+}
+
+@import 'font-face';
+@import 'breakpoint';
+
+@include font-face("Futura PT Heavy", "./content/fonts/Futura PT Heavy", null, null, otf);
+@include font-face("Futura PT Medium", "./content/fonts/Futura PT Medium", null, null, otf);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+$main-blue: #130e45;
+$main-pink: #d60c53;
+$pink-overlay: #4a0c42;
+
+$small-tablets: 480px;
+$small-tablets: 768px;
+$medium-desktops: 992px;
+$wide-screens: 1200px;
+
+$footer-height: 320px;
+
+body, html {
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14pt;
+    
+    @include breakpoint(smallphone) {
+	    font-size: 12pt;
+    }
+}
+
+.body-content{
+	height: 100%;
+}
+
+h1 {
+	font-family: "Futura PT Heavy";
+	font-size: 30pt;
+    
+    @include breakpoint(tablet) {
+	    font-size: 23pt;
+    }
+    @include breakpoint(smallphone) {
+	    font-size: 20pt;
+    }
+}
+
+.row {
+	margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ol {
+    li {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 10px;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+
+    li:first-child {
+        font-weight: bold;
+    }
+
+    @include breakpoint(tablet) {
+        margin-top: 20px;
+    }
+
+    li {
+        margin-top: 15px;
+        margin-bottom: 0px;
+        
+        @include breakpoint(tablet) {
+            
+            }
+
+    }
+}
+
+.sub-header{
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 30px;
+    
+    @include breakpoint(smallphone) {
+        padding-bottom: 10px;
+    }
+
+	h1 {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+    .row {
+        display: flex;
+        align-items: center;
+
+    }
+}
+
+.overlayed-tile {  
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	
+	.overlayed-tile-padding {
+		position: relative;
+	}
+
+	img {
+	  z-index: 0;
+	}
+
+	h2 {
+	  position: absolute;
+	  top: 10px;
+	  left: 10px;
+	  z-index: 2;
+	  margin: 0;
+	  font-family: 'Futura PT Medium';
+
+      @include breakpoint(smallphone) {
+          font-size: 20pt;
+      }
+       
+      @include breakpoint(phone) {
+          font-size: 18pt;
+      }
+       
+      @include breakpoint(tablet) {
+          font-size: 20pt;
+      }
+       
+      @include breakpoint(desktop) {
+          font-size: 22pt;
+      }
+       
+      @include breakpoint(xl) {
+          font-size: 20pt;
+      }
+	}
+
+	p {
+	  z-index: 2;
+	  position: absolute;
+	  bottom: 0;
+	  left: 10px;
+      margin-bottom: 5px;
+	}
+	
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.8;
+		display: block;  
+		z-index: 1;              
+		background-color: $pink-overlay;
+        
+        @include breakpoint(smallphone) {
+          font-size: 7pt;
+        }
+	}    
+}
+
+.section-page {
+	//padding-bottom: 30px;
+    padding-bottom: $footer-height;
+    min-height: 100%;
+	
+    .desktop-back-icon {
+        display: block;
+        
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+
+	h2 {
+	  font-family: 'Futura PT Heavy';
+	  font-size: 38pt;
+	  margin: 0;
+
+      @include breakpoint(tablet) {
+          display: inline;
+      }
+	}
+
+	img {
+		float: left;
+		margin: 50px;
+	}
+
+	p {
+		margin-top: 30px;
+		margin-bottom: 50px;
+		margin-right: 30px;
+		font-size: 20px;
+
+        @include breakpoint(tablet) {
+		    margin-right: 10px;
+            margin-left: 10px;
+		    font-size: 18px;
+        }
+        @include breakpoint(smallphone) {
+		    margin-right: 10px;
+            margin-left: 10px;
+		    font-size: 17px;
+        }
+	}
+
+	.posted-date {
+		display: block;
+		margin-right: 40px;
+		margin-left: 3px;
+		opacity: 0.6;
+        line-height: 1;
+        
+        @include breakpoint(tablet) {
+		    display: block;
+	        margin-left: 2px;
+            margin-right: 0px;
+        }
+	}
+
+	.post-title {
+		text-transform: uppercase;
+		font-family: 'Futura PT Heavy';
+		font-size: 38pt;
+		display: block;
+        line-height: 1;
+        
+        @include breakpoint(tablet) {
+		    font-size: 24pt;
+        }
+        @include breakpoint(smallphone) {
+		    font-size: 24pt;
+            margin-right: 0px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .fa {
+            font-size: 30px;
+            margin-bottom: 13px;
+        }
+	}
+
+	.table {
+	}
+
+	.table td {    
+		display: table-cell;
+		vertical-align: middle;
+		border-top: none;
+		border-bottom: 1px solid #505050;
+		padding: 0; 
+
+        @include breakpoint(tablet) {
+		    white-space: normal;
+		    overflow: auto;
+        }
+	}
+
+	.table td * {
+		vertical-align: middle;
+	}
+}
+
+.panel-description {
+    margin-top: 10px;
+}
+
+.section-content {
+	margin-left: 150px;
+	padding-top: 40px;
+	overflow: hidden;
+
+    @include breakpoint(tablet) {
+	    margin-left: 0px;
+    }
+
+    .mobile-back-icon {
+	    display: none;
+
+        @include breakpoint(tablet) {
+            display: inline;
+            width: auto;
+
+            img {
+                margin: 13px;
+            }
+        }
+    }
+	
+	a {
+		text-decoration: none;
+		padding: 20px;
+		height: 100%;
+		width: 100%;
+		display: block;
+	}
+
+    .awaiting-upload { 
+        cursor: default;     
+		padding: 20px;
+
+        .awaiting-upload-content {
+		    padding: 20px;
+        }
+    }
+}
+
+.articles-section {    
+	background-color: $main-blue;
+	color: white;
+			
+	a {
+		color: white;
+	}
+
+	.posted-date {
+
+	}
+
+	.article-title {
+		color: white;    
+	}
+
+	tr {
+		:hover {
+			background-color: $main-pink;
+		}
+	}
+
+    .awaiting-upload { 
+        color: rgba(255, 255, 255, 0.25);
+
+        :hover {
+            background-color: $main-blue;
+        }
+    }
+}
+
+.projects-section {    
+	background-color: white;
+	color: $main-blue;
+			
+	a {
+		color: $main-blue;
+	}
+
+	.posted-date {
+
+	}
+
+	.article-title {
+		color: $main-blue;    
+	}
+
+	tr {
+		:hover {
+			background-color: $main-blue;
+			color: white;
+		}
+	}
+
+    .awaiting-upload { 
+        color: rgba(19, 14, 69, 0.5);
+
+        :hover {
+            background-color: white;
+            color: rgba(19, 14, 69, 0.5);
+        }
+    }
+}
+
+.goals-section {    
+	background-color: $main-pink;
+	color: white;
+			
+	a {
+		color: white;
+	}
+
+	.posted-date {
+
+	}
+
+	.article-title {
+		color: white;    
+	}
+
+	tr {
+		:hover {
+			background-color: white;
+			color: $main-pink;
+		}
+	}
+
+    .table td {
+        border-bottom: 1px solid #faa3c2;
+    }
+
+    .awaiting-upload { 
+        color: rgba(255, 255, 255, 0.4);
+
+        :hover {
+        color: rgba(255, 255, 255, 0.4);
+            background-color: $main-pink;
+        }
+    }
+}
+
+.view-all-tile {
+	position: relative;
+	padding: 10px;
+	
+	h2 {
+	  color: $main-blue;    
+	  margin: 0;
+	  font-family: 'Futura PT Medium';      
+	}
+	
+	.padding {
+		background-color: white;
+	}
+
+	.view-all-text-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+	}
+}
+
+.panel {
+	padding-top: 60px;
+	padding-bottom: 110px;
+	
+	h1 {
+		padding-bottom: 50px;
+        padding-left: 10px;
+	}
+        
+    p {
+		font-size: 20px;
+        
+        @include breakpoint(smallphone) {
+          font-size: 14pt;
+        }
+    }
+    
+	:hover {
+		text-decoration: none;
+	}
+
+    :focus {
+        text-decoration: none;
+    }
+}
+
+.posts-panel {
+    @extend .panel;
+
+	background-color: $main-blue;
+	color: white;
+    
+	:link {
+		color:white;
+	}
+	:visited{
+		color:white;
+	}
+
+	.overlayed-tile {
+		.overlay {
+			background-color: $pink-overlay;
+		}
+	}
+
+}
+
+.projects-panel {
+	@extend .panel;
+
+    background-color: white;
+	color: $main-blue;  
+	
+	h2 {
+		color: white;
+	}
+
+	p {
+		color: $main-blue;
+	}
+
+	.overlayed-tile p {
+		color: white;
+	}
+
+	.view-all-tile {
+		h2 {
+		  color: white;       
+		}
+	
+		.padding {
+			background-color: $main-blue;
+		}
+	}
+
+	:link {
+		color:$main-blue;
+	}
+	:visited{
+		color:$main-blue;
+	}
+
+	.overlayed-tile {
+		.overlay {
+			background-color: $main-blue;
+		}
+	}
+}
+
+.goals-panel {
+    @extend .panel;
+
+	background-color: $main-pink;
+	color: white;
+
+	h2 {
+		color: $main-pink;
+	}
+
+	p {
+		color: white;
+	}
+
+	.overlayed-tile p {
+		color: $main-pink;
+	}
+
+	.view-all-tile {
+		h2 {
+		  color: $main-pink;       
+		}
+	
+		.padding {
+			background-color: white;
+		}
+	}
+
+	:link {
+		color:white;
+	}
+	:visited{
+		color:white;
+	}
+	
+	.overlayed-tile {
+		.overlay {
+			background-color: white;
+		}
+	}
+}
+
+.image-gallery {
+    width: 58%;
+    float: left;
+    margin-left: 30%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+    
+    figure {
+        display: inline-block;
+        float: left;
+        margin: 0 5px 5px 0;
+        width: 49%;
+       
+        @include breakpoint(tablet) {
+            float: none;
+        }
+    }
+    
+    .third-width-gallery-item {
+        width: 30%;
+    }
+    
+    figcaption {
+        display: none;
+        text-align: center;
+    }
+}
+
+.mandarin-table {
+    text-align: center;
+    
+    @include breakpoint(tablet) {
+        font-size: 0.8em;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .transcription {
+        font-size: 2em;
+       
+        @include breakpoint(tablet) {
+            font-size: 1.5em;
+        }
+    }
+
+    .hanzi {
+        font-size: 3em;
+       
+        @include breakpoint(tablet) {
+            font-size: 2.5em;
+        }
+    }
+}
+
+.m-scene .scene_element {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+.m-scene .scene_element--fadein {
+  animation-name: fadeIn;
+}
+
+.m-scene.is-exiting .scene_element {
+  animation-direction: alternate-reverse;
+}
+
+.title-page-header{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    text-align: center;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#130e45+0,d60c53+100 */
+	background: #130e45; /* Old browsers */
+	background: -moz-linear-gradient(top, #d60c53 0%, #130e45 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #d60c53 0%, #130e45 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #d60c53 0%, #130e45 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d60c53', endColorstr='#130e45',GradientType=0 ); /* IE6-9 */
+
+	img {
+		margin-top: -100px;
+        
+        @include breakpoint(tablet) {
+	        width: 150px;
+        }
+        @include breakpoint(smallphone) {
+	        width: 130px;
+            margin-top: -50px;
+        }
+        @media only screen and (max-device-width: 768px) and (orientation : landscape) 
+        {
+            width: 130px;
+            margin-top: -40px;
+        }
+	}
+
+	h1 {
+		color: white;
+		font-size: 82px;
+		font-family: "Futura PT Medium";
+		margin-top: 70px;
+
+        @include breakpoint(tablet) {
+	        margin-top: 30px;
+            font-size: 70px;
+        }
+        @include breakpoint(smallphone) {
+	        margin-top: 20px;
+            font-size: 60px;
+        }
+        @media only screen and (max-device-width: 768px) and (orientation : landscape) 
+        {
+	        margin-top: 10px;
+            font-size: 60px;
+        }
+	}
+
+	h2 {
+		color: white;
+		font-family: "Futura PT Medium";
+		margin-top: 10px;
+        
+        @include breakpoint(tablet) {
+	        font-size: 23px;
+        }
+        @include breakpoint(smallphone) {
+	        font-size: 21px;
+        }
+	}
+}
+
+.title-page-footer-mobile {
+    @include footer-background-and-colour(white, #d60c53, #130e45);
+    margin-top: 0;
+    padding-top: 15px;
+}
+
+.title-page-footer {
+    height: 100px;
+    background-color: grey;
+    margin: 0;
+    padding: 10px 0 10px 0;
+    
+    @include breakpoint(tablet) {
+        height: auto;
+        text-align: center;
+        }
+
+    ul {
+        display:inline-block;
+        list-style:none; 
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        
+        @include breakpoint(tablet) {
+            display:block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            }
+    }
+
+    li {
+        display:list-item;
+        float: left;
+        font-family: "Futura PT Heavy";
+        font-size: 2.2em;
+        margin: 0;
+        
+        @include breakpoint(tablet) {
+            float: none;
+            }
+
+        a {    
+            color: white;
+            display: block;
+            margin-top: 10px;
+            margin-left: 60px;
+            text-decoration: none;
+        
+                @include breakpoint(tablet) {
+                    margin: 0;
+                    }
+
+            img {    
+                display: block;
+                height: 60px;
+                width: 60px;
+        
+                @include breakpoint(tablet) {
+                    display: inline-block;
+                    }
+            }
+        }
+    }
+}
+
+.post-header {   
+	height: 80%;
+    
+    @include breakpoint(tablet) {
+        height: 84%;
+    }
+
+	h1 {
+        font-family: 'Futura PT Heavy';
+        font-size: 3.5em;
+        color: white;
+        margin: 0;
+        margin-top: -20px;   
+    
+        @include breakpoint(tablet) {
+            font-size: 2.5em;
+        }
+	}
+
+	a img {
+		position: absolute;
+		margin: 50px;
+	}
+
+	p {
+		font-family: 'Futura PT Heavy';
+		font-size: 24pt;
+		color: white;
+		margin: 10pt;   
+    
+        @include breakpoint(tablet) {
+		    font-size: 16pt;
+        }     
+	}
+
+	.title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	    text-transform: uppercase;    
+        background-size: cover;
+        background-position: center;
+
+        a {
+            left: 0;
+            top: 0;
+            position: absolute;
+        }
+
+		.shadow {
+			//background-color: rgba(15, 53, 62, 0.4); //30px blur
+            //text-shadow: 0px 0px 30px #0f353e;
+		}
+	}
+}
+
+.post-container {
+    overflow: auto;
+	position: relative;
+    margin-top: 90px;
+    padding-bottom: 70px;
+          
+    @include breakpoint(tablet) {
+	    margin-top: 30px;
+        }     
+
+    .animation {
+        width: 100%;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
+.travel-body {
+	text-align: center;
+	margin: 60px 150px;
+
+	h2 {
+		text-transform: uppercase;
+		font-family: 'Futura PT Heavy';
+		font-size: 24pt;
+		color: #0f353e;
+		margin: 60px;
+	}
+
+	.travel-plans {
+		text-align: right;
+		padding: 0;
+		
+		p {
+			margin: 0;
+			margin-bottom: 20px;
+		}
+	}
+
+	.travel-plan-sidetext {
+		text-align: left;
+		padding-left: 30px;
+	}
+
+	p {
+		margin-bottom: 30px;
+
+		.city {
+			font-weight: bold;
+			font-family: 'Futura PT Heavy';
+			font-size: 14pt;
+			display: block;
+		}
+	}
+}
+
+.post-sidebar{
+	float: left;
+	display: block;
+	position: absolute;
+	top: 0px;
+    margin-left: 10%;
+    width: 15%;
+    line-height: 1.1;
+        
+    @include breakpoint(tablet) {
+	    position: static;
+        width: auto;
+        margin: 30px;
+        float: none;
+        text-align: center;
+    }
+
+    p {
+        margin: 0;
+    }
+
+	.category {
+		text-transform: uppercase;
+        color: black;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        font-size: 0.9em;
+	}
+
+	.value {
+        color: darkgray;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        font-size: 1.3em;
+        margin-bottom: 20px;
+	}
+
+    .tags {
+        font-size: 1.0em;
+        margin-top: 10px;
+        line-height: 25px;
+        margin-bottom: 20px;
+    }
+
+    .languages {
+        color: black;
+        text-decoration: none;
+        
+        a {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+    
+    .translated {
+        display: none;
+        }
+}
+
+.pullout {    
+	float: left;
+	display: block;
+	position: absolute;
+	left: 0px;
+    margin-left: 10%;
+    width: 15%;
+    line-height: 1.1;
+}
+
+.hljs {
+    padding: 0;
+    margin-top: -40px;
+    margin-bottom: -50px;
+}
+
+.post-body {
+
+    >p, >a, >figure, >h2, >h3, >h4, >table, >img, >blockquote, >ul, >ol, >section, >.table-wrapper, >div, >pre {
+        display: block;
+        float: left;
+        width: 58%;
+        margin-left: 30%;
+        
+        @include breakpoint(tablet) {
+            float: none;
+            width: 82%;
+            margin-left: 30px;
+            margin-right: 30px;
+            } 
+    }
+
+    .borderless td, .borderless th {
+        border: none;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 0px;
+        padding-right: 15px;
+        vertical-align: middle;
+    }
+
+    table {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        
+        tbody:before {
+            line-height:1em; 
+            content:"\200C"; 
+            display:block;
+        }
+    }
+
+    q {
+        display: block;
+        font-size: 1.1em;
+        padding: 30px;
+        border: 0;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    blockquote {
+        font-size: 1.8em;
+        padding: 0;
+        border: 0;
+        text-transform: uppercase;
+    }
+    
+
+    .mobile-ul {
+        display: none;
+        float: left;        
+    
+        @include breakpoint(tablet) {
+            display: inline;
+        }
+    }
+
+    .hide-on-mobile {        
+        @include breakpoint(tablet) {
+            display: none;
+        }
+    }
+
+    .pull-quote {
+        border: 1px solid grey;
+        color: white;
+        background-color: $main-blue;
+
+        a {
+            display: inline-block;
+            padding: 20px;
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    figcaption {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 0.8em;
+        color: grey;
+    }
+
+    figure {
+        padding: 0;
+
+        .column {
+            padding-left: 0px;
+            padding-right: 15px;
+          
+            @include breakpoint(tablet) {
+                margin-bottom: 50px;
+                } 
+        }
+
+        .blog-posts-image-column {
+            padding-left: 0px;
+            padding-right: 15px;
+            margin-top: 20px;
+            
+            @include breakpoint(tablet) {
+                margin-bottom: 10px;
+                } 
+        }
+
+        .blog-posts-text-column {
+            padding-left: 0px;
+            padding-right: 15px;
+            margin-top: 20px;
+
+            @include breakpoint(tablet) {
+                margin-bottom: 30px;
+                } 
+        }
+    }
+
+
+    .introduction {
+        color: #808080;
+        font-size: 1.4em;
+        margin-bottom: 30px;
+    }
+
+    .full-width-figure {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    .inline-image-figure {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        color: slategrey;
+        font-family: "Futura PT Heavy";
+        font-size: 1.15em;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-family: "Futura PT Heavy";
+        font-size: 0.9em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        
+        @include breakpoint(tablet) {
+            margin-top:40px;
+        }
+    }
+
+    .described-point {
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        >:nth-child(1) {
+            font-size:1.3em;
+        }
+
+        >p {
+        }
+    }
+
+    .article-link {
+        border: 1px solid;
+        border-color: #130e45;
+        color: #130e45;
+        display: table-cell;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        width: 100%;
+
+        td {
+            width: 100%;
+            display: block;
+        }
+
+        :hover {
+            color: white;
+            background-color: #130e45;
+        }
+
+        a {            
+		    text-decoration: none;
+		    padding: 30px;
+		    height: 100%;
+		    width: 100%;
+		    display: inline-block;
+            color: #130e45;
+        }
+
+        p {
+            font-size: 12pt;
+            margin: 0;
+        }
+
+        .link-title {
+            font-size: 20pt;
+            font-family: "Futura PT Heavy";
+            text-transform: uppercase;
+        }
+    }
+
+    #translated-text {
+        display: none;
+    }
+}
+
+.article-dual-image {
+	* {
+		padding: 0;
+	}
+}
+
+.ellipses {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}
+
+.footer-articles {
+    @include footer-background-and-colour(white, #130e45, #d60c53);
+}
+
+.footer-projects {
+    @include footer-background-and-colour(#130e45, #ffffff, #130e45);
+}
+
+.footer-goals {
+    @include footer-background-and-colour(white, #d60c53,#130e45 );
+}
+
+.footer-project {
+    @include footer-background-and-colour(#505050, #ffffff, #d6d1c9);
+}
+
+.header_nav_wrapper {
+    position: fixed;
+    top: 0;
+    z-index: 9997;
+    width: 100%;
+    height: 72px;
+    box-shadow: 0px -70px 100px 50px black;    
+    opacity: 0;
+    visibility: collapse;  
+    background-size: cover;
+    background-position: center;
+
+    ul {
+        display:inline-block;
+        list-style:none; 
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .back-icon {
+        width: 75px;
+        float: left;
+    }
+
+    .single-line-nav {
+        line-height: 1.4;
+          
+        @include breakpoint(tablet) {
+            line-height: 2.2;
+        } 
+        @include breakpoint(smallphone) {
+            line-height: 2.5;
+        }
+    }
+
+    ul {        
+        display: flex;
+        align-items: center;
+    }
+
+    li {
+        display:list-item;
+        float: left;
+        font-family: "Futura PT Heavy";
+        font-size: 2.2em;
+        margin: 0;
+        padding: 0;
+        width: 80%;
+          
+        @include breakpoint(tablet) {
+            font-size: 1.4em;
+        } 
+        @include breakpoint(smallphone) {
+            font-size: 1.2em;
+            width: 70%;
+            margin-left: 0;
+        }
+
+        p {
+            color: white;
+            display: block;
+            margin: 0;
+            margin-left: 10px;
+            width: 100%;
+            text-align: left;
+            line-height: 1.1;
+            
+            @include breakpoint(phone) {
+                margin-left: 0;
+            }
+        }
+
+        a {    
+            color: white;
+            display: block;
+            width: auto;
+
+            img {    
+                display: block;
+                margin: 20px;
+                
+                @include breakpoint(smallphone) {
+                    
+                }
+            }
+        }
+    }
+}
+
+.header_nav {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+
+    .nav_left_side {
+        float: left;
+        text-align: center;
+        display: block;
+        padding: 0 1.25rem;
+    }
+}
+
+.good-developer-download {
+    margin-bottom: 20px;
+    border: 1px solid #130e45;
+    
+    :hover {
+        color: white;
+        background-color: #130e45;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 20px;
+        color: black;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        display: inline-flex;
+    
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: row;
+    }
+
+    .download-icon {
+        width: 19%;
+        text-align: center;
+        display: flex;
+    
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: row;
+
+        .icon-image-black {
+            background-image: url(/content/images/download-black.png);
+            height: 36px;
+            width: 36px;
+        }
+
+        .icon-image-white {
+            background-image: url(/content/images/download-white.png);
+            height: 36px;
+            width: 36px;
+        }
+    }
+
+    .table-wrapper {
+        width: 80%;
+        display: inline-block;
+    }
+
+    table {
+        width: 100%;
+        margin: 0;
+        
+        :hover {
+            color: white;
+            background-color: #130e45;
+        }
+    }
+}
+
+/*
+ * Keyframes
+ */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+

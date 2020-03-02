@@ -1,0 +1,116 @@
+---
+meta: '<meta property="og:title" content="Become a Senior Engineer" />
+
+<meta property="og:type" content="article" />
+
+<meta property="og:url" content="http://www.mattjmatthias.co/goals/become-a-senior-engineer" />
+
+<meta property="og:locale" content="en_GB">
+
+<meta property="og:image:type" content="image/jpg">
+
+<meta property="og:image" content="http://www.mattjmatthias.co/content/images/releases.jpg" />
+
+<meta property="og:image:width" content="2000" />
+
+<meta property="og:image:height" content="1333" />
+
+<meta property="og:description" content="I’ve worked as a software engineer for over 15 years." />
+
+<meta property="article:author" content="http://www.mattjmatthias.co/about">
+
+<meta property="article:published_time" content="2014-07-02T12:00:00Z">'
+AccentColour: '#d60c53'
+IsPage: true
+title: "Goal - Become A Senior Engineer" 
+---
+<div class="post-header">
+    <div class="title">
+        <a href="javascript:history.back()">
+            <img class="back-icon" src="/content/images/white-back-icon.png" />
+        </a>
+        <div class="shadow">
+            <p>Completed Goal</p>
+            <h1>Become A Senior Engineer</h1>
+        </div>
+    </div>
+    <input id="hero-image" hidden value="/content/images/releases.jpg" />
+</div>
+
+<div class="header_nav_wrapper navbar-fixed-top visible-md-block visible-lg-block" style='background-image: url("/content/images/releases.jpg")'>
+    <div class="header_nav">
+        <nav class="nav_right_side">
+            <ul>
+                <li class="back-icon"><a href="javascript:history.back()"><img src="/content/images/white-back-icon.png" /></a></li>
+                <li><p>BECOME A SENIOR ENGINEER</p></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="post-container clear-fix">
+    <aside class="post-sidebar">
+        <div class="category">
+            <p>Date Set</p>
+        </div>
+        <div class="value">
+            <p>June 2011</p>
+        </div>
+
+        <div class="category">
+            <p>Target Date</p>
+        </div>
+        <div class="value">
+            <p>June 2014</p>
+        </div>
+
+        <div class="category">
+            <p>Completion Metric</p>
+        </div>
+        <div class="value">
+            <p>Change In Job Role</p>
+        </div>
+
+        <div class="category">
+            <p>Topics</p>
+        </div>
+        <div class="tags">
+            <p>
+                <a>Professional Development</a>,
+                <a>Training</a>
+            </p>
+        </div>
+    </aside>
+
+    <article class="post-body">
+        <p class="introduction">I’ve worked as a software engineer for over 15 years.</p>
+        <p>There comes a point where you realise you no longer spend all your time writing code. Whether it’s project management or leading a team of developers, at some point you realise something has changed.</p>
+        <p>At some point you start spending more time managing than coding.</p>
+        <p>I’ve worked at Bibby Scientific for 10 years. When I started, code was saved on network shares and binaries handed out on request. There was no traceability of changes at the code level. Feature requests came from a marketing specification document provided at the start of a project, and a traditional waterfall model was followed by a project lead who was normally a mechanical engineer.</p>
+        <p>I introduced components to improve how the department managed software from gathering user feedback to managing release information for production and support departments.</p>
+        <p>I visited customers around Europe to help with installation and support and sometimes helped technical support by introducing a remote support session to help customers over the internet.</p>
+
+        <h2>Continuous Integration</h2>
+        <p>The first thing to setup was a code repository. I chose <a href="http://subversion.apache.org/">SVN</a> as at the time it had been out for a few years, quite established and popular amongst developers. After a few years I considered moving to <a href="https://git-scm.com/">Git</a> as the tools seemed better but the centralised authentication of SVN was more suitable for our work.</p>
+        <p>The next process to be adopted was better issue tracking for testing. I started with <a href="https://www.bugzilla.org/">Bugzilla</a>. It was a great way to get people in other departments used to habits of using an issue tracker.</p>
+        <p>Before long I wanted to use a build server to automate the build procedure and to introduce <a href="https://en.wikipedia.org/wiki/Continuous_integration">continuous integration</a>. The server I intended to use, <a href="http://www.jetbrains.com/teamcity/">JetBrains TeamCity</a>, had an associated issue tracker called <a href="http://www.jetbrains.com/youtrack/">YouTrack</a>. The new issue tracking also came with a lot of features for managing user stories and helped to introduce a more agile development process.</p>
+        <p>As well as automating a lot of the release work, I tried to increase the unit test coverage of legacy code we had, and encourage test-driven development. The build server was modified to pick up the unit tests to provide increased transparency of failing builds.</p>
+        <p>Documentation was also an initial problem. Support documents and other notes jotted down during development were stored ad-hoc in Word files or, at worst, e-mails passed around. I installed and started using <a href="https://www.mediawiki.org/">MediaWiki</a> as a searchable store of documentation.</p>
+        <p>Using the wiki as a store, I implemented a software change notice process (which was documented for quality control). The previous change process was heavily engineering and glass manufacturing led, as that had been the business’ previous focus. The new software change notice focused solely on software and providing, auditing, traceability and transparency.</p>
+        <p>By this time the team size had grown to 5 developers and releases had become more automated allowing the team to focus more on development and less on management tasks. I changed how the project was managed by splitting down the marketing specification into user stories.</p>
+        <p>To begin with, this was more for the benefit of allowing developers to work from separate stories but over time it became a better way of providing context to the tasks that made up a project. It allowed the team to get feedback about features sooner, and change them if needed.</p>
+
+        <h2>Feedback</h2>
+        <p>As the team (and department) got used to a more agile approach, I started to look at other ways of getting feedback on development. We lacked feedback about how features were used by end-users, or whether they were used at all. Assumptions were made during development and the little feedback we got came after a product was released, and normally months after it had been on the market.</p>
+        <p>Following the work of <a href="https://www.sensible.com/rsme.html">Steven Krug</a>, I worked with our sales department to get e-mail addresses of universities and businesses that we sell to in the surrounding area and reached out. I wanted to setup usability studies where we could get feedback on prototypes and concepts before or during development. </p>
+        <blockquote>It’s amazing to see products being used, and to understand the problems they solved</blockquote>
+        <p>We got some positive responses and started out with observation sessions and interviews so we could understand the end-user context. We added some interviews and tests uses concepts and prototypes. As with all user feedback, it’s amazing to see products being used, and to understand the problems they solved.</p>
+        <p>In addition to product feedback I wanted developers to get used to asking for feedback on their work. I set up a code review site (<a href="https://www.jetbrains.com/upsource/">Upsource</a>) that developers could use to ask for reviews and increase transparency of the work we were doing as a team.</p>
+        <p>I created a 10-week training course covering developer skills. Each week consisted of a 1-hour session which covered values and principles of Extreme Programming (XP) and the design patterns from the gang of four’s book <a href="https://www.amazon.co.uk/Design-patterns-elements-reusable-object-oriented/dp/0201633612">Design patterns: elements of reusable object-oriented software</a>. I wanted to set a baseline for discussions about the code and to encourage developers to think architecturally. We also covered code smells and refactoring skills.</p>
+        <p>Increasing developer skills is always time well spent, but I think a team that works to values such as communication, feedback and respect creates an environment where people can learn, grow and more importantly enjoy their work.</p>
+        <p>The code review site coupled with training meant that we could focus on an agreed coding style which we could check using Lint (on Java) or StyleCop (on .Net), leaving us to look at structural and other coding features automation couldn’t pick up.</p>
+
+        <h2>Promotion</h2>
+        <p>About 6 years into the role I asked for a promotion to senior level. After a few months of management navigation I was promoted in 2014.</p>
+    </article>
+</section>

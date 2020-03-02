@@ -1,0 +1,55 @@
+---
+layout: default
+title: Projects
+permalink: /projects
+footerClass: footer-projects
+---
+
+<div class="section-page projects-section">
+    <a href="\" class="desktop-back-icon">
+        <img class="back-icon" src="/content/images/blue-back-icon.png" />
+    </a>
+    <div class="section-content">
+        <a href="\" class="mobile-back-icon">
+            <img class="back-icon" src="/content/images/blue-back-icon.png" />
+        </a>
+        <h2>PROJECTS</h2>
+
+        <p>
+            This is a list of projects I've taken on. Some are software-technical, some business-related, some maker-related but all a lot of fun. I've included details about the purpose of each project, how it was done and what I learned from it. Project resources are freely available to anyone who wants them.
+        </p>
+
+        <table class="table">       
+            {% for project in site.data.projects %}   
+                {% assign tags = project.Tags | downcase %}         
+                {% if tags contains "awaiting-upload" %}  
+                    <tr class="awaiting-upload">
+                        <td>
+                            <div class="awaiting-upload-content">
+                                <div class="posted-date">
+                                    {{project.DatePosted|date_to_long_string: "ordinal" }}
+                                </div>
+                                <div class="post-title">
+                                    {{project.Title}}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>
+                            <a href="{{project.Url}}">
+                                <div class="posted-date">
+                                    {{project.DatePosted|date_to_long_string: "ordinal" }}
+                                </div>
+                                <div class="post-title">
+                                    {{project.Title}}
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+</div>

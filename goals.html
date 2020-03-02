@@ -1,0 +1,64 @@
+---
+layout: default
+title: Goals
+permalink: /goals
+footerClass: footer-goals
+---
+
+<link rel="stylesheet" href="/content/fa/css/font-awesome.css">
+
+<div class="section-page goals-section">
+    <a href="\" class="desktop-back-icon">
+        <img class="back-icon" src="/content/images/white-back-icon.png" />
+    </a>
+    <div class="section-content">
+        <a href="\" class="mobile-back-icon">
+            <img class="back-icon" src="/content/images/white-back-icon.png" />
+        </a>
+        <h2>GOALS</h2>
+
+        <p>
+            These are goals I'm trying to achieve along with some that I've already completed. It's like an ever-growing bucket list. It goes back quite a few years. Faded goals haven't been uploaded yet, and a tick next to a goal indicates it's complete. Goals are sorted ascending by date set and date completed combined.
+        </p>
+        <div style="width:100%">
+            <table class="table">
+                {% for goal in site.data.goals %}   
+                    {% assign tags = goal.Tags | downcase %}         
+                    {% if tags contains "awaiting-upload" %}   
+                        <tr class="awaiting-upload">
+                            <td>
+                                <div class="awaiting-upload-content">
+                                    <div class="posted-date">
+                                        {{goal.DatePosted|date_to_long_string: "ordinal" }}
+                                    </div>
+                                    <div class="post-title">
+                                        {{goal.Title}}      
+                                        {% if tags contains "completed" %}   
+                                            <i class="fa fa-check fa-fw" aria-hidden="true"></i>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td>
+                                <a href="{{goal.Url}}">
+                                    <div class="posted-date">
+                                        {{goal.DatePosted|date_to_long_string: "ordinal" }}
+                                    </div>
+                                    <div class="post-title">
+                                        {{goal.Title}}
+                                        {% if tags contains "completed" %}   
+                                            <i class="fa fa-check fa-fw" aria-hidden="true"></i>
+                                        {% endif %}
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>

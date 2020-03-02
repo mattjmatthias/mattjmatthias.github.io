@@ -1,51 +1,95 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Matthias - {{ page.title }}
+    </title>
+    
+    <script src="/scripts/modernizr-2.6.2.js"></script>
 
-    {% include meta.html %}
+    <link rel="stylesheet" href="/content/bootstrap-reboot.css">
+    <link rel="stylesheet" href="/content/bootstrap-grid.css">
+    <link rel="stylesheet" href="/content/bootstrap-flex.css">
+    <link rel="stylesheet" href="/content/bootstrap.css">    
+    <link rel="stylesheet" href="/content/main.css">
+    <link rel="stylesheet" href="/content/fa/css/font-awesome.css">
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#bf0d78">
+    <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    {% if page.meta %}
+        {{page.meta}}
+    {% else %}
+    <meta property="og:title" content="Matt Matthias - {{page.title}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="This is my place. This is a place of stories and ideas. It's a place of memories. Both personal and professional, like the internet today. It contains my thoughts, projects and goals." />
+    <meta property="og:url" content="http://www.mattjmatthias.co/" />
+    <meta property="og:image" content="http://www.mattjmatthias.co/content/images/share-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="631" />
+    {% endif%}
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
+      ga('create', 'UA-88829689-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div id="main" class="m-scene body-content">
+{{content}}
+        
+{% if content contains 'image-gallery' %}
+{% include photoswipe.html %}
+{% endif %}
+        {% unless page.IsPage %}
+            <footer class="title-page-footer-mobile clearfix {{page.footerClass}}">
+                <div class="">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><a href="/articles">ARTICLES</a></h1>
+                                <h1><a href="/projects">PROJECTS</a></h1>
+                                <h1><a href="/goals">GOALS</a></h1>
+                                <!--<h1><a href="/about">ABOUT ME</a></h1>-->
+                                <h1>
+                                    <a href="https://www.facebook.com/mattjmatthias"><span class="fa fa-facebook-f fa-fw"></span></a>
+                                    <a href="https://twitter.com/mattjmatthias"><span class="fa fa-twitter fa-fw"></span></a>
+                                    <a href="https://www.linkedin.com/in/mattjmatthias"><span class="fa fa-linkedin-square fa-fw"></span></a>
+                                    <a href="https://www.instagram.com/mattjmatthias/"><span class="fa fa-instagram fa-fw"></span></a>
+                                    <a href="https://www.snapchat.com/add/mattjmatthias"><span class="fa fa-snapchat-ghost fa-fw"></span></a>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        {% else %}         
+            <input type="hidden" id="accentColour" value="{{page.AccentColour}}" />
+            <footer class="title-page-footer clearfix">
+                <ul>
+                    <li><a href="/"><img src="/content/images/icon.png" /></a></li>
+                    <li><a href="/articles">ARTICLES</a></li>
+                    <li><a href="/projects">PROJECTS</a></li>
+                    <li><a href="/goals">GOALS</a></li>
+                </ul>
+            </footer>
+        {% endunless %}
     </div>
-
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
-
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
+    
+    <script src="/scripts/jquery-3.0.0.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/respond.js"></script>    
+    <script src="/scripts/jquery.smoothState.js"></script> 
+    <script src="/scripts/main.js"></script> 
+</body>
 </html>

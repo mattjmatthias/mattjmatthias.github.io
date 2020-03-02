@@ -1,0 +1,203 @@
+﻿<div class="post-header">
+    <div class="title">
+        <a href="javascript:history.back()">
+            <img class="back-icon" src="/content/images/white-back-icon.png" />
+        </a>
+        <div class="shadow">
+            <p>January 2017</p>
+            <h1>Dev Training: Big O Notation</h1>
+        </div>
+    </div>
+    <input id="hero-image" hidden value="/content/images/dev-training-big-o-notation.jpg" />
+</div>
+
+<div class="header_nav_wrapper navbar-fixed-top visible-md-block visible-lg-block" style='background-image: url("/content/images/dev-training-big-o-notation.jpg"); background-size: cover; background-position: top;'>
+    <div class="header_nav">
+        <nav class="nav_right_side">
+            <ul>
+                <li class="back-icon"><a href="javascript:history.back()"><img src="/content/images/white-back-icon.png" /></a></li>
+                <li><p>BIG O NOTATION</p></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="post-container clear-fix">
+
+    <aside class="post-sidebar">
+        <div class="category">
+            <p>Published</p>
+        </div>
+        <div class="value">
+            <p>January 2017</p>
+        </div>
+
+        <div class="category">
+            <p>Topics</p>
+        </div>
+        <div class="tags">
+            <p>
+                <a>Development</a>,
+                <a>Algorithms</a>,
+                <a>Computer Science</a>,
+                <a>Training</a>
+            </p>
+        </div>
+    </aside>
+
+    <article class="post-body">
+        <p class="introduction">You don’t have to be a computer scientist to write the most efficient code, but knowing good algorithms from bad ones certainly helps.</p>
+        <p>Most developers aren’t born mathematicians. And that’s fine. Software developers generally need to learn a lot other things like language syntax, common pitfalls, and structural design. They can use the tools created for them to produce some pretty amazing applications. But because computers and software come from mathematics, developers often bump into it.</p>
+        <p>And that’s not always a bad thing. Sometimes, a little knowledge can help.</p>
+        <p>Take writing algorithms for example.</p>
+        <p>All developers can put together a program which does something. It has a start, takes some data, does something with it, and eventually ends. A basic program with a simple algorithm is easy. But some programs aren’t simple. Some data sets aren’t small. Manipulating large tables of data sometimes requires a little more thought and that can result in a more complicated algorithm.</p>
+        <h2>Algorithm Design</h2>
+        <p>There are lots of different approaches to designing algorithms. You can take a <a href="https://en.wikipedia.org/wiki/Greedy_algorithm">Greedy approach</a>, a <a href="https://en.wikipedia.org/wiki/Divide_and_conquer_algorithm">divide-and-conquer</a> style attack, a <a href="https://en.wikipedia.org/wiki/Brute-force_search">brute-force search</a> or even an optimised <a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic style</a>. Each is best suited to a different kind of problem. Picking the right approach can be difficult.</p>
+        <p>To check if an algorithm is best suited to a problem, it’s useful to have tools or ways of describing and comparing characteristics like performance or complexity. This is where big Big O notation comes in useful.</p>
+        <h2>Big O Notation</h2>
+        <p>Big O Notation is a way of describing how well an algorithm will scale as the size of its input increases. Understanding it helps you to design better algorithms, and gives you some things to be aware of.</p>
+        <p>It’s a mathematical way of writing about how a function’s time to complete changes as its the size of its input data changes. As input data gets larger, the increase in time is called the growth rate, and Big O notation describes that growth rate.</p>
+        <p>It’s also used to describe how the space needed at any point in an algorithm grows as the input grows, but for this article I’ll focus only on time complexity.</p>
+        <p>It’s worth noting that because data can vary, how long it takes a function to do its job can vary too. A function that searches an array may either find what it’s looking for immediately or search the whole array before being successful. Big O notation always describes the worst-case scenario.</p>
+        <p>Each level of complexity described by Big O notation also has a rating of how well it scales as input sizes grow: some well, some terribly. But if a level of complexity scales badly, that doesn’t mean it should always be avoided. <a href="https://en.wikipedia.org/wiki/Knapsack_problem">Some problems</a> have solutions that don’t scale well. When faced with a solution that doesn’t scale well, it’s important to be aware of what size of input the algorithm can comfortably manage, and keep the input data below that limit.</p>
+        <p>In this article, I cover 8 of the most commonly used notations. I’ll explain how each is defined, along with its name and some common algorithms or data structure operations that can be described as using Big O Notation. I’ll show some code that serves as a good example and, where possible, point out some design suggestions each one highlights.</p>
+        <h3>O(1)</h3>
+        <p>Algorithms or functions described as <strong>O(1)</strong> have no growth rate, meaning they don’t take longer the larger their input gets. Their growth rate is classed as constant. Accessing an array is described as <strong>O(1)</strong> because it doesn’t matter how large the array is, it will take always the same time to get an element.</p>
+        <pre>
+            <code class="cs">
+string getFirstItem(string[] items)
+{
+    return items[0];
+}
+            </code>
+        </pre>
+        <h3>O(n)</h3>
+        <p>Functions described as <strong>O(n)</strong> have a linear growth rate. As the size of their input grows, the time to complete grows at the same pace. Any algorithm that has to go through an entire data set once before completing is likely to be classed as <strong>O(n)</strong>. Searching for a value in an array is <strong>O(n)</strong>, as potentially the whole array must be visited to find a value. A linear growth rate is considered to be good.</p>
+        <pre>
+            <code class="cs">
+bool findUser(string[] usernames, string user)
+{
+    for (int i = 0; i < usernames.Length; i++)
+    {
+        if (usernames[i] == user)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+            </code>
+        </pre>
+        <h3><strong>O(n<sup>2</sup>)</strong></h3>
+        <p>If a function loops over a dataset and with each item also does something with every other item, you’re looking at <strong>O(n<sup>2</sup>)</strong>, or quadratic. Because of how fast the time to complete can grow, this isn’t considered efficient, and is only suitable for smaller sized inputs. A <a href="https://www.khanacademy.org/computing/computer-science/algorithms/sorting-algorithms/a/sorting">selection sort</a> algorithm is a good example of an <strong>O(n<sup>2</sup>)</strong> function.</p>
+        <p>This level of complexity suggests that if you find an algorithm which analyses an array at the same times as traversing it, remember that there will be a limit on the size of inputs it can manage well.</p>
+        <pre>
+            <code class="cs">
+List&lt;string&gt; makePairs(string[] items)
+{
+    List&lt;string&gt; pairs = new List&lt;string&gt;();
+
+    for (int i = 0; i < items.Length; i++)
+    {
+        for (int j = 0; j < items.Length; j++)
+        {
+            pairs.Add(items[i] + ", " + items[j]);
+        }
+    }
+
+    return pairs;
+}
+            </code>
+        </pre>
+        <h3><strong>O(n<sup>c</sup>)</strong></h3>
+        <p>Functions which have a growth rate of <strong>O(n<sup>c</sup>)</strong> are known as polynomial and are considered to scale terribly. <strong>O(n<sup>c</sup>)</strong> is like <strong>O(n<sup>c</sup>)</strong> except that not only does it loop through data and do something with every other item, but it does it more than once (C times).</p>
+        <p>This can create a phenomenal rate of growth. As the size of the input grows, the time it takes to complete heads skyward. Assuming C = 3, a 100-element list would require 1,000,000 passes; a 1000-element list 1,000,000,000 passes.</p>
+        <pre>
+            <code class="cs">
+List&lt;string&gt; makeTriplets(string[] items)
+{
+    List&lt;string&gt; triplets = new List&lt;string&gt;();
+    
+    for (int i = 0; i < items.Length; i++)
+    {
+        for (int j = 0; j < items.Length; j++)
+        {
+            for (int k = 0; k < items.Length; k++)
+            {
+                triplets.Add(items[i] + ", " + items[j] + ", " + items[k]);
+            }
+        }
+    }
+
+    return triplets;
+}
+            </code>
+        </pre>
+        <h3>O(2<sup>n</sup>)</h3>
+        <p>Another one belonging to the <em>scales badly</em> group is <strong>O(2<sup>n</sup>)</strong> known as exponential. It describes an algorithm whose time to complete doubles with each single extra item in its input. It’s nearly the worst level of complexity out of the 8. An example of this is a basic function for calculating Fibonacci numbers without optimisations.</p>
+        <pre>
+            <code class="cs">
+int calculateFibonacci(int number)
+{
+    if (number <= 1) return number;
+    
+    return calculateFibonacci(number - 2) + calculateFibonacci(number - 1);
+}
+            </code>
+        </pre>
+        <h3><strong>O(log n)</strong></h3>
+        <p><strong>O(log n)</strong> is considered the golden child of Big O notation. Algorithms defined as <strong>O(log n)</strong> have a logarithmic growth rate and excluding <strong>O(1)</strong> are considered to be the best growth rate to achieve. The time taken to complete only increases each time the input size doubles, which means as the input size grows substantially the algorithm’s time taken to complete only increases a little.</p>
+        <p>It does this by being intelligent with how it treats the data.  <strong>O(log n)</strong> algorithms try to not use the complete input data and instead try to reduce the size of the problem with each iteration.</p>
+        <p>Take a binary search algorithm which searches a sorted array. It begins by going to the middle of the array and deciding to go up or down the array. In one iteration it instantly knows it can ignore half of the array.</p>
+        <p>This highlights that when dealing with a large amount of data, it’s worth considering how you can organise the data so that you can make intelligence assumptions. Finding a way of discounting data as you traverse will help create an algorithm that scales well.</p>
+        <pre>
+            <code class="cs">
+void demonstrateLogN(string[] items)
+{
+    for (int i = items.Length; i > 0; i /= 2)
+    {
+        Console.WriteLine("Position " + i + " visited.");
+    }
+}
+            </code>
+        </pre>
+        <h3>O(n log n)</h3>
+        <p>Algorithms defined as <strong>O(n log n)</strong> have a similar growth rate to <strong>O(n)</strong> except that it’s multiplied by the log of number of items in the input which makes it a little worse. Unfortunately this makes it not so good. Some sorting algorithms like <a href="https://www.khanacademy.org/computing/computer-science/algorithms#merge-sort">mergesort</a>, or <a href="https://en.wikipedia.org/wiki/Heapsort">heapsort</a> can be defined as <strong>O(n log n)</strong>. Imagine an algorithm that loops through an array and for each iteration, like <strong><strong>O(n<sup>2</sup>)</strong></strong>, it does something with other items of the array. But unlike <strong><strong>O(n<sup>2</sup>)</strong></strong> it only does something with a selection of the array. The algorithm has some way of making an intelligent choice about which items to look at. </p>
+        <p>This emphasises that if you have an algorithm that feels like it’s <strong><strong>O(n<sup>2</sup>)</strong></strong>, it’s always worth remembering that just because you have to traverse the whole data set once, doesn’t mean a further efficiency can’t be found in a later step. Always try to keeping look for ways to reduce the size of the problem.</p>
+        <pre>
+            <code class="cs">
+void demonstrateNLogN(string[] items) 
+{
+    for (int j = 0; j < items.Length; j++)
+    {
+        for (int i = items.Length; i > 0; i /= 2)
+        {
+            Console.WriteLine("Position " + j + ", " + i + " visited.");
+        }
+    }
+}
+            </code>
+        </pre>
+        <div class="image-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="/content/images/big-o-chart.png" itemprop="contentUrl" data-size="2000x1254">
+                    <img src="/content/images/big-o-chart.png" itemprop="thumbnail" alt="Big-O Notation Chart" />
+                </a>
+                <figcaption itemprop="caption description">Big-O Notation Comparison Chart</figcaption>
+            </figure>
+        </div>
+        <h2>Summary</h2>
+        <p>Hopefully this brief overview will help understand Big O Notation. Not only is it a useful tool to help describe algorithms, but it also helps when deciding which data structure or sorting algorithm to choose. </p>
+        <h2>Resources</h2>
+        <p>Here are some great links to learn more about Big O Notation</p>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Big_O_notation">Big O Notation on Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities">Table of Common Time Complexities on Wikipedia</a></li>
+            <li><a href="http://bigocheatsheet.com">Big O Cheat Sheet</a></li>
+        </ul>
+        </article>
+</section>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/vs.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>

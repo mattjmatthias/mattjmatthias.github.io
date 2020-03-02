@@ -1,0 +1,1113 @@
+/*********************
+BREAKPOINTS
+*********************/
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+  font-family: "Futura PT Heavy";
+  src: url("/fonts/Futura PT Heavy.otf") format("opentype"); }
+@font-face {
+  font-family: "Futura PT Medium";
+  src: url("/fonts/Futura PT Medium.otf") format("opentype"); }
+body, html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14pt; }
+  @media (max-width: 320px) {
+    body, html {
+      font-size: 12pt; } }
+
+.body-content {
+  height: 100%; }
+
+h1 {
+  font-family: "Futura PT Heavy";
+  font-size: 30pt; }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 23pt; } }
+  @media (max-width: 320px) {
+    h1 {
+      font-size: 20pt; } }
+
+.row {
+  margin: 0; }
+
+.bold {
+  font-weight: bold; }
+
+ol li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 10px; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px; }
+  ul li:first-child {
+    font-weight: bold; }
+  @media (max-width: 768px) {
+    ul {
+      margin-top: 20px; } }
+  ul li {
+    margin-top: 15px;
+    margin-bottom: 0px; }
+
+.sub-header {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 30px; }
+  @media (max-width: 320px) {
+    .sub-header {
+      padding-bottom: 10px; } }
+  .sub-header h1 {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .sub-header .row {
+    display: flex;
+    align-items: center; }
+
+.overlayed-tile {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px; }
+  .overlayed-tile .overlayed-tile-padding {
+    position: relative; }
+  .overlayed-tile img {
+    z-index: 0; }
+  .overlayed-tile h2 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    margin: 0;
+    font-family: 'Futura PT Medium'; }
+    @media (max-width: 320px) {
+      .overlayed-tile h2 {
+        font-size: 20pt; } }
+    @media (max-width: 480px) {
+      .overlayed-tile h2 {
+        font-size: 18pt; } }
+    @media (max-width: 768px) {
+      .overlayed-tile h2 {
+        font-size: 20pt; } }
+    @media (max-width: 1299px) {
+      .overlayed-tile h2 {
+        font-size: 22pt; } }
+    @media (min-width: 1300px) {
+      .overlayed-tile h2 {
+        font-size: 20pt; } }
+  .overlayed-tile p {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    margin-bottom: 5px; }
+  .overlayed-tile .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    display: block;
+    z-index: 1;
+    background-color: #4a0c42; }
+    @media (max-width: 320px) {
+      .overlayed-tile .overlay {
+        font-size: 7pt; } }
+
+.section-page {
+  padding-bottom: 320px;
+  min-height: 100%; }
+  .section-page .desktop-back-icon {
+    display: block; }
+    @media (max-width: 768px) {
+      .section-page .desktop-back-icon {
+        display: none; } }
+  .section-page h2 {
+    font-family: 'Futura PT Heavy';
+    font-size: 38pt;
+    margin: 0; }
+    @media (max-width: 768px) {
+      .section-page h2 {
+        display: inline; } }
+  .section-page img {
+    float: left;
+    margin: 50px; }
+  .section-page p {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-right: 30px;
+    font-size: 20px; }
+    @media (max-width: 768px) {
+      .section-page p {
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 18px; } }
+    @media (max-width: 320px) {
+      .section-page p {
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 17px; } }
+  .section-page .posted-date {
+    display: block;
+    margin-right: 40px;
+    margin-left: 3px;
+    opacity: 0.6;
+    line-height: 1; }
+    @media (max-width: 768px) {
+      .section-page .posted-date {
+        display: block;
+        margin-left: 2px;
+        margin-right: 0px; } }
+  .section-page .post-title {
+    text-transform: uppercase;
+    font-family: 'Futura PT Heavy';
+    font-size: 38pt;
+    display: block;
+    line-height: 1; }
+    @media (max-width: 768px) {
+      .section-page .post-title {
+        font-size: 24pt; } }
+    @media (max-width: 320px) {
+      .section-page .post-title {
+        font-size: 24pt;
+        margin-right: 0px; } }
+    .section-page .post-title p {
+      margin: 0; }
+    .section-page .post-title .fa {
+      font-size: 30px;
+      margin-bottom: 13px; }
+  .section-page .table td {
+    display: table-cell;
+    vertical-align: middle;
+    border-top: none;
+    border-bottom: 1px solid #505050;
+    padding: 0; }
+    @media (max-width: 768px) {
+      .section-page .table td {
+        white-space: normal;
+        overflow: auto; } }
+  .section-page .table td * {
+    vertical-align: middle; }
+
+.panel-description {
+  margin-top: 10px; }
+
+.section-content {
+  margin-left: 150px;
+  padding-top: 40px;
+  overflow: hidden; }
+  @media (max-width: 768px) {
+    .section-content {
+      margin-left: 0px; } }
+  .section-content .mobile-back-icon {
+    display: none; }
+    @media (max-width: 768px) {
+      .section-content .mobile-back-icon {
+        display: inline;
+        width: auto; }
+        .section-content .mobile-back-icon img {
+          margin: 13px; } }
+  .section-content a {
+    text-decoration: none;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    display: block; }
+  .section-content .awaiting-upload {
+    cursor: default;
+    padding: 20px; }
+    .section-content .awaiting-upload .awaiting-upload-content {
+      padding: 20px; }
+
+.articles-section {
+  background-color: #130e45;
+  color: white; }
+  .articles-section a {
+    color: white; }
+  .articles-section .article-title {
+    color: white; }
+  .articles-section tr :hover {
+    background-color: #d60c53; }
+  .articles-section .awaiting-upload {
+    color: rgba(255, 255, 255, 0.25); }
+    .articles-section .awaiting-upload :hover {
+      background-color: #130e45; }
+
+.projects-section {
+  background-color: white;
+  color: #130e45; }
+  .projects-section a {
+    color: #130e45; }
+  .projects-section .article-title {
+    color: #130e45; }
+  .projects-section tr :hover {
+    background-color: #130e45;
+    color: white; }
+  .projects-section .awaiting-upload {
+    color: rgba(19, 14, 69, 0.5); }
+    .projects-section .awaiting-upload :hover {
+      background-color: white;
+      color: rgba(19, 14, 69, 0.5); }
+
+.goals-section {
+  background-color: #d60c53;
+  color: white; }
+  .goals-section a {
+    color: white; }
+  .goals-section .article-title {
+    color: white; }
+  .goals-section tr :hover {
+    background-color: white;
+    color: #d60c53; }
+  .goals-section .table td {
+    border-bottom: 1px solid #faa3c2; }
+  .goals-section .awaiting-upload {
+    color: rgba(255, 255, 255, 0.4); }
+    .goals-section .awaiting-upload :hover {
+      color: rgba(255, 255, 255, 0.4);
+      background-color: #d60c53; }
+
+.view-all-tile {
+  position: relative;
+  padding: 10px; }
+  .view-all-tile h2 {
+    color: #130e45;
+    margin: 0;
+    font-family: 'Futura PT Medium'; }
+  .view-all-tile .padding {
+    background-color: white; }
+  .view-all-tile .view-all-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; }
+
+.panel, .posts-panel, .projects-panel, .goals-panel {
+  padding-top: 60px;
+  padding-bottom: 110px; }
+  .panel h1, .posts-panel h1, .projects-panel h1, .goals-panel h1 {
+    padding-bottom: 50px;
+    padding-left: 10px; }
+  .panel p, .posts-panel p, .projects-panel p, .goals-panel p {
+    font-size: 20px; }
+    @media (max-width: 320px) {
+      .panel p, .posts-panel p, .projects-panel p, .goals-panel p {
+        font-size: 14pt; } }
+  .panel :hover, .posts-panel :hover, .projects-panel :hover, .goals-panel :hover {
+    text-decoration: none; }
+  .panel :focus, .posts-panel :focus, .projects-panel :focus, .goals-panel :focus {
+    text-decoration: none; }
+
+.posts-panel {
+  background-color: #130e45;
+  color: white; }
+  .posts-panel :link {
+    color: white; }
+  .posts-panel :visited {
+    color: white; }
+  .posts-panel .overlayed-tile .overlay {
+    background-color: #4a0c42; }
+
+.projects-panel {
+  background-color: white;
+  color: #130e45; }
+  .projects-panel h2 {
+    color: white; }
+  .projects-panel p {
+    color: #130e45; }
+  .projects-panel .overlayed-tile p {
+    color: white; }
+  .projects-panel .view-all-tile h2 {
+    color: white; }
+  .projects-panel .view-all-tile .padding {
+    background-color: #130e45; }
+  .projects-panel :link {
+    color: #130e45; }
+  .projects-panel :visited {
+    color: #130e45; }
+  .projects-panel .overlayed-tile .overlay {
+    background-color: #130e45; }
+
+.goals-panel {
+  background-color: #d60c53;
+  color: white; }
+  .goals-panel h2 {
+    color: #d60c53; }
+  .goals-panel p {
+    color: white; }
+  .goals-panel .overlayed-tile p {
+    color: #d60c53; }
+  .goals-panel .view-all-tile h2 {
+    color: #d60c53; }
+  .goals-panel .view-all-tile .padding {
+    background-color: white; }
+  .goals-panel :link {
+    color: white; }
+  .goals-panel :visited {
+    color: white; }
+  .goals-panel .overlayed-tile .overlay {
+    background-color: white; }
+
+.image-gallery {
+  width: 58%;
+  float: left;
+  margin-left: 30%;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+  .image-gallery img {
+    width: 100%;
+    height: auto; }
+  .image-gallery figure {
+    display: inline-block;
+    float: left;
+    margin: 0 5px 5px 0;
+    width: 49%; }
+    @media (max-width: 768px) {
+      .image-gallery figure {
+        float: none; } }
+  .image-gallery .third-width-gallery-item {
+    width: 30%; }
+  .image-gallery figcaption {
+    display: none;
+    text-align: center; }
+
+.mandarin-table {
+  text-align: center; }
+  @media (max-width: 768px) {
+    .mandarin-table {
+      font-size: 0.8em; } }
+  .mandarin-table th {
+    text-align: center; }
+  .mandarin-table .transcription {
+    font-size: 2em; }
+    @media (max-width: 768px) {
+      .mandarin-table .transcription {
+        font-size: 1.5em; } }
+  .mandarin-table .hanzi {
+    font-size: 3em; }
+    @media (max-width: 768px) {
+      .mandarin-table .hanzi {
+        font-size: 2.5em; } }
+
+.m-scene .scene_element {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both; }
+
+.m-scene .scene_element--fadein {
+  animation-name: fadeIn; }
+
+.m-scene.is-exiting .scene_element {
+  animation-direction: alternate-reverse; }
+
+.title-page-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#130e45+0,d60c53+100 */
+  background: #130e45;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d60c53 0%, #130e45 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d60c53 0%, #130e45 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d60c53 0%, #130e45 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d60c53', endColorstr='#130e45',GradientType=0 );
+  /* IE6-9 */ }
+  .title-page-header img {
+    margin-top: -100px; }
+    @media (max-width: 768px) {
+      .title-page-header img {
+        width: 150px; } }
+    @media (max-width: 320px) {
+      .title-page-header img {
+        width: 130px;
+        margin-top: -50px; } }
+    @media only screen and (max-device-width: 768px) and (orientation: landscape) {
+      .title-page-header img {
+        width: 130px;
+        margin-top: -40px; } }
+  .title-page-header h1 {
+    color: white;
+    font-size: 82px;
+    font-family: "Futura PT Medium";
+    margin-top: 70px; }
+    @media (max-width: 768px) {
+      .title-page-header h1 {
+        margin-top: 30px;
+        font-size: 70px; } }
+    @media (max-width: 320px) {
+      .title-page-header h1 {
+        margin-top: 20px;
+        font-size: 60px; } }
+    @media only screen and (max-device-width: 768px) and (orientation: landscape) {
+      .title-page-header h1 {
+        margin-top: 10px;
+        font-size: 60px; } }
+  .title-page-header h2 {
+    color: white;
+    font-family: "Futura PT Medium";
+    margin-top: 10px; }
+    @media (max-width: 768px) {
+      .title-page-header h2 {
+        font-size: 23px; } }
+    @media (max-width: 320px) {
+      .title-page-header h2 {
+        font-size: 21px; } }
+
+.title-page-footer-mobile {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 30px;
+  margin-top: -300px;
+  height: 320px;
+  text-align: center;
+  background: #d60c53;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d60c53 0%, #130e45 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d60c53 0%, #130e45 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d60c53 0%, #130e45 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d60c53', endColorstr='#130e45',GradientType=0 );
+  /* IE6-9 */
+  margin-top: 0;
+  padding-top: 15px; }
+  .title-page-footer-mobile h1 {
+    color: white;
+    font-size: 30pt;
+    font-family: "Futura PT Heavy";
+    margin-top: 10px;
+    margin-bottom: 5px; }
+  .title-page-footer-mobile a {
+    color: white; }
+  .title-page-footer-mobile :link {
+    color: white; }
+  .title-page-footer-mobile :visited {
+    color: white; }
+  .title-page-footer-mobile :hover {
+    text-decoration: none; }
+
+.title-page-footer {
+  height: 100px;
+  background-color: grey;
+  margin: 0;
+  padding: 10px 0 10px 0; }
+  @media (max-width: 768px) {
+    .title-page-footer {
+      height: auto;
+      text-align: center; } }
+  .title-page-footer ul {
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0; }
+    @media (max-width: 768px) {
+      .title-page-footer ul {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px; } }
+  .title-page-footer li {
+    display: list-item;
+    float: left;
+    font-family: "Futura PT Heavy";
+    font-size: 2.2em;
+    margin: 0; }
+    @media (max-width: 768px) {
+      .title-page-footer li {
+        float: none; } }
+    .title-page-footer li a {
+      color: white;
+      display: block;
+      margin-top: 10px;
+      margin-left: 60px;
+      text-decoration: none; }
+      @media (max-width: 768px) {
+        .title-page-footer li a {
+          margin: 0; } }
+      .title-page-footer li a img {
+        display: block;
+        height: 60px;
+        width: 60px; }
+        @media (max-width: 768px) {
+          .title-page-footer li a img {
+            display: inline-block; } }
+
+.post-header {
+  height: 80%; }
+  @media (max-width: 768px) {
+    .post-header {
+      height: 84%; } }
+  .post-header h1 {
+    font-family: 'Futura PT Heavy';
+    font-size: 3.5em;
+    color: white;
+    margin: 0;
+    margin-top: -20px; }
+    @media (max-width: 768px) {
+      .post-header h1 {
+        font-size: 2.5em; } }
+  .post-header a img {
+    position: absolute;
+    margin: 50px; }
+  .post-header p {
+    font-family: 'Futura PT Heavy';
+    font-size: 24pt;
+    color: white;
+    margin: 10pt; }
+    @media (max-width: 768px) {
+      .post-header p {
+        font-size: 16pt; } }
+  .post-header .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    background-size: cover;
+    background-position: center; }
+    .post-header .title a {
+      left: 0;
+      top: 0;
+      position: absolute; }
+
+.post-container {
+  overflow: auto;
+  position: relative;
+  margin-top: 90px;
+  padding-bottom: 70px; }
+  @media (max-width: 768px) {
+    .post-container {
+      margin-top: 30px; } }
+  .post-container .animation {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px; }
+
+.travel-body {
+  text-align: center;
+  margin: 60px 150px; }
+  .travel-body h2 {
+    text-transform: uppercase;
+    font-family: 'Futura PT Heavy';
+    font-size: 24pt;
+    color: #0f353e;
+    margin: 60px; }
+  .travel-body .travel-plans {
+    text-align: right;
+    padding: 0; }
+    .travel-body .travel-plans p {
+      margin: 0;
+      margin-bottom: 20px; }
+  .travel-body .travel-plan-sidetext {
+    text-align: left;
+    padding-left: 30px; }
+  .travel-body p {
+    margin-bottom: 30px; }
+    .travel-body p .city {
+      font-weight: bold;
+      font-family: 'Futura PT Heavy';
+      font-size: 14pt;
+      display: block; }
+
+.post-sidebar {
+  float: left;
+  display: block;
+  position: absolute;
+  top: 0px;
+  margin-left: 10%;
+  width: 15%;
+  line-height: 1.1; }
+  @media (max-width: 768px) {
+    .post-sidebar {
+      position: static;
+      width: auto;
+      margin: 30px;
+      float: none;
+      text-align: center; } }
+  .post-sidebar p {
+    margin: 0; }
+  .post-sidebar .category {
+    text-transform: uppercase;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size: 0.9em; }
+  .post-sidebar .value {
+    color: darkgray;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size: 1.3em;
+    margin-bottom: 20px; }
+  .post-sidebar .tags {
+    font-size: 1.0em;
+    margin-top: 10px;
+    line-height: 25px;
+    margin-bottom: 20px; }
+  .post-sidebar .languages {
+    color: black;
+    text-decoration: none; }
+    .post-sidebar .languages a {
+      display: block;
+      margin-top: 10px; }
+  .post-sidebar .translated {
+    display: none; }
+
+.pullout {
+  float: left;
+  display: block;
+  position: absolute;
+  left: 0px;
+  margin-left: 10%;
+  width: 15%;
+  line-height: 1.1; }
+
+.hljs {
+  padding: 0;
+  margin-top: -40px;
+  margin-bottom: -50px; }
+
+.post-body > p, .post-body > a, .post-body > figure, .post-body > h2, .post-body > h3, .post-body > h4, .post-body > table, .post-body > img, .post-body > blockquote, .post-body > ul, .post-body > ol, .post-body > section, .post-body > .table-wrapper, .post-body > div, .post-body > pre {
+  display: block;
+  float: left;
+  width: 58%;
+  margin-left: 30%; }
+  @media (max-width: 768px) {
+    .post-body > p, .post-body > a, .post-body > figure, .post-body > h2, .post-body > h3, .post-body > h4, .post-body > table, .post-body > img, .post-body > blockquote, .post-body > ul, .post-body > ol, .post-body > section, .post-body > .table-wrapper, .post-body > div, .post-body > pre {
+      float: none;
+      width: 82%;
+      margin-left: 30px;
+      margin-right: 30px; } }
+.post-body .borderless td, .post-body .borderless th {
+  border: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 0px;
+  padding-right: 15px;
+  vertical-align: middle; }
+.post-body table {
+  margin-top: 30px;
+  margin-bottom: 10px; }
+  .post-body table tbody:before {
+    line-height: 1em;
+    content: "\200C";
+    display: block; }
+.post-body q {
+  display: block;
+  font-size: 1.1em;
+  padding: 30px;
+  border: 0;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+.post-body blockquote {
+  font-size: 1.8em;
+  padding: 0;
+  border: 0;
+  text-transform: uppercase; }
+.post-body .mobile-ul {
+  display: none;
+  float: left; }
+  @media (max-width: 768px) {
+    .post-body .mobile-ul {
+      display: inline; } }
+@media (max-width: 768px) {
+  .post-body .hide-on-mobile {
+    display: none; } }
+.post-body .pull-quote {
+  border: 1px solid grey;
+  color: white;
+  background-color: #130e45; }
+  .post-body .pull-quote a {
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: white; }
+.post-body figcaption {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.8em;
+  color: grey; }
+.post-body figure {
+  padding: 0; }
+  .post-body figure .column {
+    padding-left: 0px;
+    padding-right: 15px; }
+    @media (max-width: 768px) {
+      .post-body figure .column {
+        margin-bottom: 50px; } }
+  .post-body figure .blog-posts-image-column {
+    padding-left: 0px;
+    padding-right: 15px;
+    margin-top: 20px; }
+    @media (max-width: 768px) {
+      .post-body figure .blog-posts-image-column {
+        margin-bottom: 10px; } }
+  .post-body figure .blog-posts-text-column {
+    padding-left: 0px;
+    padding-right: 15px;
+    margin-top: 20px; }
+    @media (max-width: 768px) {
+      .post-body figure .blog-posts-text-column {
+        margin-bottom: 30px; } }
+.post-body .introduction {
+  color: #808080;
+  font-size: 1.4em;
+  margin-bottom: 30px; }
+.post-body .full-width-figure {
+  margin-left: 0%;
+  width: 100%; }
+.post-body .inline-image-figure {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+.post-body h2 {
+  text-transform: uppercase;
+  color: slategrey;
+  font-family: "Futura PT Heavy";
+  font-size: 1.15em;
+  margin-top: 40px;
+  margin-bottom: 30px; }
+.post-body h3 {
+  text-transform: uppercase;
+  font-family: "Futura PT Heavy";
+  font-size: 0.9em;
+  margin-top: 20px;
+  margin-bottom: 10px; }
+  @media (max-width: 768px) {
+    .post-body h3 {
+      margin-top: 40px; } }
+.post-body .described-point {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+  .post-body .described-point > :nth-child(1) {
+    font-size: 1.3em; }
+.post-body .article-link {
+  border: 1px solid;
+  border-color: #130e45;
+  color: #130e45;
+  display: table-cell;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 100%; }
+  .post-body .article-link td {
+    width: 100%;
+    display: block; }
+  .post-body .article-link :hover {
+    color: white;
+    background-color: #130e45; }
+  .post-body .article-link a {
+    text-decoration: none;
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    color: #130e45; }
+  .post-body .article-link p {
+    font-size: 12pt;
+    margin: 0; }
+  .post-body .article-link .link-title {
+    font-size: 20pt;
+    font-family: "Futura PT Heavy";
+    text-transform: uppercase; }
+.post-body #translated-text {
+  display: none; }
+
+.article-dual-image * {
+  padding: 0; }
+
+.ellipses {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; }
+
+.footer-articles {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 30px;
+  margin-top: -300px;
+  height: 320px;
+  text-align: center;
+  background: #130e45;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #130e45 0%, #d60c53 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #130e45 0%, #d60c53 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #130e45 0%, #d60c53 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#130e45', endColorstr='#d60c53',GradientType=0 );
+  /* IE6-9 */ }
+  .footer-articles h1 {
+    color: white;
+    font-size: 30pt;
+    font-family: "Futura PT Heavy";
+    margin-top: 10px;
+    margin-bottom: 5px; }
+  .footer-articles a {
+    color: white; }
+  .footer-articles :link {
+    color: white; }
+  .footer-articles :visited {
+    color: white; }
+  .footer-articles :hover {
+    text-decoration: none; }
+
+.footer-projects {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 30px;
+  margin-top: -300px;
+  height: 320px;
+  text-align: center;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #130e45 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #130e45 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #130e45 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#130e45',GradientType=0 );
+  /* IE6-9 */ }
+  .footer-projects h1 {
+    color: #130e45;
+    font-size: 30pt;
+    font-family: "Futura PT Heavy";
+    margin-top: 10px;
+    margin-bottom: 5px; }
+  .footer-projects a {
+    color: #130e45; }
+  .footer-projects :link {
+    color: #130e45; }
+  .footer-projects :visited {
+    color: #130e45; }
+  .footer-projects :hover {
+    text-decoration: none; }
+
+.footer-goals {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 30px;
+  margin-top: -300px;
+  height: 320px;
+  text-align: center;
+  background: #d60c53;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d60c53 0%, #130e45 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d60c53 0%, #130e45 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d60c53 0%, #130e45 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d60c53', endColorstr='#130e45',GradientType=0 );
+  /* IE6-9 */ }
+  .footer-goals h1 {
+    color: white;
+    font-size: 30pt;
+    font-family: "Futura PT Heavy";
+    margin-top: 10px;
+    margin-bottom: 5px; }
+  .footer-goals a {
+    color: white; }
+  .footer-goals :link {
+    color: white; }
+  .footer-goals :visited {
+    color: white; }
+  .footer-goals :hover {
+    text-decoration: none; }
+
+.footer-project {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 30px;
+  margin-top: -300px;
+  height: 320px;
+  text-align: center;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #d6d1c9 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #d6d1c9 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #d6d1c9 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6d1c9',GradientType=0 );
+  /* IE6-9 */ }
+  .footer-project h1 {
+    color: #505050;
+    font-size: 30pt;
+    font-family: "Futura PT Heavy";
+    margin-top: 10px;
+    margin-bottom: 5px; }
+  .footer-project a {
+    color: #505050; }
+  .footer-project :link {
+    color: #505050; }
+  .footer-project :visited {
+    color: #505050; }
+  .footer-project :hover {
+    text-decoration: none; }
+
+.header_nav_wrapper {
+  position: fixed;
+  top: 0;
+  z-index: 9997;
+  width: 100%;
+  height: 72px;
+  box-shadow: 0px -70px 100px 50px black;
+  opacity: 0;
+  visibility: collapse;
+  background-size: cover;
+  background-position: center; }
+  .header_nav_wrapper ul {
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+  .header_nav_wrapper .back-icon {
+    width: 75px;
+    float: left; }
+  .header_nav_wrapper .single-line-nav {
+    line-height: 1.4; }
+    @media (max-width: 768px) {
+      .header_nav_wrapper .single-line-nav {
+        line-height: 2.2; } }
+    @media (max-width: 320px) {
+      .header_nav_wrapper .single-line-nav {
+        line-height: 2.5; } }
+  .header_nav_wrapper ul {
+    display: flex;
+    align-items: center; }
+  .header_nav_wrapper li {
+    display: list-item;
+    float: left;
+    font-family: "Futura PT Heavy";
+    font-size: 2.2em;
+    margin: 0;
+    padding: 0;
+    width: 80%; }
+    @media (max-width: 768px) {
+      .header_nav_wrapper li {
+        font-size: 1.4em; } }
+    @media (max-width: 320px) {
+      .header_nav_wrapper li {
+        font-size: 1.2em;
+        width: 70%;
+        margin-left: 0; } }
+    .header_nav_wrapper li p {
+      color: white;
+      display: block;
+      margin: 0;
+      margin-left: 10px;
+      width: 100%;
+      text-align: left;
+      line-height: 1.1; }
+      @media (max-width: 480px) {
+        .header_nav_wrapper li p {
+          margin-left: 0; } }
+    .header_nav_wrapper li a {
+      color: white;
+      display: block;
+      width: auto; }
+      .header_nav_wrapper li a img {
+        display: block;
+        margin: 20px; }
+
+.header_nav {
+  display: inline-block;
+  text-align: center;
+  width: 100%; }
+  .header_nav .nav_left_side {
+    float: left;
+    text-align: center;
+    display: block;
+    padding: 0 1.25rem; }
+
+.good-developer-download {
+  margin-bottom: 20px;
+  border: 1px solid #130e45; }
+  .good-developer-download :hover {
+    color: white;
+    background-color: #130e45; }
+  .good-developer-download a {
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; }
+  .good-developer-download .download-icon {
+    width: 19%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; }
+    .good-developer-download .download-icon .icon-image-black {
+      background-image: url(/content/images/download-black.png);
+      height: 36px;
+      width: 36px; }
+    .good-developer-download .download-icon .icon-image-white {
+      background-image: url(/content/images/download-white.png);
+      height: 36px;
+      width: 36px; }
+  .good-developer-download .table-wrapper {
+    width: 80%;
+    display: inline-block; }
+  .good-developer-download table {
+    width: 100%;
+    margin: 0; }
+    .good-developer-download table :hover {
+      color: white;
+      background-color: #130e45; }
+
+/*
+ * Keyframes
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/*# sourceMappingURL=main.css.map */

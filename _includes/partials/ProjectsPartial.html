@@ -1,0 +1,48 @@
+<div class="projects-panel container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-sm-offset-1">
+            <h1><a href="/projects">PROJECTS</a></h1>
+        </div>
+        <div class="col-sm-7 panel-description">
+            <p>
+
+            </p>
+        </div>
+    </div>
+    <div class="row">
+            {% for project in site.data.projects limit:5 %}
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-2 overlayed-tile">
+                {% if {{project.Tags|downcase}} contains "awaiting-upload" %}                
+                    <div>
+                        <div class="overlayed-tile-padding">
+                            <img src="{{project.ThumbnailUrl}}" class="img-fluid" />
+                            <div class="overlay"></div>
+                            <h2>{{project.Title|upcase}}</h2>
+                            <p>Awaiting Upload<br />{{project.DatePosted|date_to_long_string: "ordinal" }}</p>
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="{{project.Type|downcase}}s/{{project.Url}}">
+                        <div class="overlayed-tile-padding">
+                            <img src="{{project.ThumbnailUrl}}" class="img-fluid" />
+                            <div class="overlay"></div>
+                            <h2>{{project.Title|upcase}}</h2>
+                            <p>{{project.DatePosted}}</p>                            
+                        </div>
+                    </a>
+                {% endif %}
+                </div>
+            {% endfor %}
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-2 view-all-tile">
+                <a href="projects">
+                    <div class="padding">
+                        <img src="/content/images/transparent.png" class="img-fluid" />
+                        <div class="view-all-text-overlay">
+                            <h2>VIEW ALL</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+</div>

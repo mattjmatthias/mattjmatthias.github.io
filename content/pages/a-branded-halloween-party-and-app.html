@@ -1,0 +1,169 @@
+﻿<div class="post-header">
+    <div class="title">
+        <a href="javascript:history.back()">
+            <img class="back-icon" src="/content/images/white-back-icon.png" />
+        </a>
+        <div class="shadow">
+            <p>Project</p>
+            <h1>A Branded Halloween Party</h1>
+        </div>
+    </div>
+    <input id="hero-image" hidden value="/content/images/halloween-party.jpg" />
+</div>
+
+<div class="header_nav_wrapper navbar-fixed-top visible-md-block visible-lg-block" style='background-image: url("/content/images/halloween-party.jpg")'>
+    <div class="header_nav">
+        <nav class="nav_right_side">
+            <ul>
+                <li class="back-icon"><a href="javascript:history.back()"><img src="/content/images/white-back-icon.png" /></a></li>
+                <li><p>A BRANDED HALLOWEEN PARTY</p></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<section class="post-container clear-fix">
+    <aside class="post-sidebar">
+        <div class="category">
+            <p>Date Set</p>
+        </div>
+        <div class="value">
+            <p>September 2012</p>
+        </div>
+
+        <div class="category">
+            <p>Date Completed</p>
+        </div>
+        <div class="value">
+            <p>October 2012</p>
+        </div>
+
+        <div class="category">
+            <p>Topics</p>
+        </div>
+        <div class="tags">
+            <p>
+                <a>Software Development</a>,
+                <a>Design</a>
+            </p>
+        </div>
+    </aside>
+
+    <article class="post-body">
+        <p class="introduction">I’ve always loved Halloween. It’s like Christmas without presents, and compressed into one single evening. It has parties and decorations. Friends get together and everything feels a little bit different for one night. I generally always decorate the house and have a party, or at least go to one.</p>
+        <p>In 2012 I threw a party and it was the perfect excuse for some technology.</p>
+        <p>The previous <a href="\articles\a-branded-halloween-party-and-app">now playing application project</a> provided a good baseline to start from for creating something that we could play during the party.</p>
+        <h2>The App</h2>
+        <p>The idea was to create a video quiz that played during the party. Every now and again, a video question played on screens in the house and everyone answered on their smartphone. At the end of the night the winner was the one with the most correct answers.</p>
+        <p>Additionally, given it was a Halloween party I wanted to scare people. I wanted the app to allow participants to play loud screams or animal sounds throughout the house.</p>
+        <p>The smartphone app was based on Facebook’s API and designed for phones. By using Facebook, registration and gathering usernames and profile images was easy.</p>
+
+        <h2>The Brand</h2>
+        <p>For the style of the app, a little inspired by the game <a href="http://playdead.com/limbo/">Limbo</a>, and the <a href="https://www.google.co.uk/search?q=Lemony+Snicket+Series+of+Unfortunate+Events+final+credits&biw=1200&bih=865&source=lnms&tbm=isch">final credit sequence of the film Lemony Snickett</a> I chose use a <a href="https://www.google.co.uk/search?q=silhouette+animation&source=lnms&tbm=isch">silhouette animation</a> look.</p>
+
+        <div class="image-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+            <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="/content/images/halloween-party-brand.jpg" itemprop="contentUrl" data-size="1024x398">
+                    <img src="/content/images/halloween-party-brand.jpg" itemprop="thumbnail" alt="Image descxiption" />
+                </a>
+            </figure>
+        </div>
+            <p>I carried the style throughout the house by decorating the walls in dead trees made from black sugar paper.</p>
+            <h2>Getting Started</h2>
+            <p>The house had a 55” screen in the living room and a 25” touchscreen PC in the kitchen, so these were where the videos would play. I applied the branding to the <em>now playing</em> application and changed it so that it could display a video and questions when requested.</p>
+            <p>I also realised that the remote control from the earlier project wouldn’t be required. People could use the touchscreen PC to change the current track.</p>
+            <p>For the quiz, I put together 30 questions. Some questions were based on videos, some were just trivia questions. Each question was multiple choice.</p>
+            <p class="pull-quote">
+                <a href="/">Feel free to use the questions, answers and video links</a>
+
+                <a href="/">
+                    <img class="back-icon" src="/content/images/white-forward-icon.png" />
+                </a>
+            </p>
+            <p>I gave my Facebook account a special version of the smart phone app so I could control when the questions would appear to pace them out throughout the night. If everyone seemed entertained or distracted I could wait for a break in noise before making a question appear.</p>
+            <h2>Technical Info</h2>
+            <p>The app was a website which connected to a SQL database to access questions.</p>
+            <p>It exposed a WCF service which allowed the WPF application to periodically check for a new question. When one was available, it downloaded the question and displayed it on the screens. The web app then allowed users to answer the question on their phones and stored the scores in the database.</p>
+            <p>In addition to the WCF service, the web app exposed a bidirectional socket connection. This allowed users to select a scream which sent a command from the website to the WPF application. When the WPF received a command, it would play the scream at full volume in the house.</p>
+
+            <div class="image-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="/content/images/halloween-party-app1.jpg" itemprop="contentUrl" data-size="360x628">
+                        <img src="/content/images/halloween-party-app1.jpg" itemprop="thumbnail" alt="Image description" />
+                    </a>
+                    <figcaption itemprop="caption description">The app home screen</figcaption>
+                </figure>
+
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="/content/images/halloween-party-app2.jpg" itemprop="contentUrl" data-size="315x551">
+                        <img src="/content/images/halloween-party-app2.jpg" itemprop="thumbnail" alt="Image description" />
+                    </a>
+                    <figcaption itemprop="caption description">Question answering screen</figcaption>
+                </figure>
+
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="/content/images/halloween-party-app3.jpg" itemprop="contentUrl" data-size="357x624">
+                        <img src="/content/images/halloween-party-app3.jpg" itemprop="thumbnail" alt="Image description" />
+                    </a>
+                    <figcaption itemprop="caption description">Previous answer review screen</figcaption>
+                </figure>
+
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="/content/images/halloween-party-app4.jpg" itemprop="contentUrl" data-size="357x623">
+                        <img src="/content/images/halloween-party-app4.jpg" itemprop="thumbnail" alt="Image description" />
+                    </a>
+                    <figcaption itemprop="caption description">Screams screen</figcaption>
+                </figure>
+
+            </div>
+
+            <h2>The House</h2>
+            <p>I decorated the house using the brand style as a guide. I cut-out emotions relating to fear in the style’s font and stuck them around the house. With a fog machine added, the black cut-out trees had a similar effect to the silhouette animation style.</p>
+
+
+        <div class="image-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+            <figure class="third-width-gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="/content/images/halloween-party/2.jpg" itemprop="contentUrl" data-size="1500x1000">
+                    <img src="/content/images/halloween-party/2.jpg" itemprop="thumbnail" alt="Image descxiption" />
+                </a>
+            </figure>
+            <figure class="third-width-gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="/content/images/halloween-party/4.jpg" itemprop="contentUrl" data-size="1500x1000">
+                    <img src="/content/images/halloween-party/4.jpg" itemprop="thumbnail" alt="Image descxiption" />
+                </a>
+            </figure>
+            <figure class="third-width-gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="/content/images/halloween-party/5.jpg" itemprop="contentUrl" data-size="1500x1000">
+                    <img src="/content/images/halloween-party/5.jpg" itemprop="thumbnail" alt="Image descxiption" />
+                </a>
+            </figure>
+            <figure class="third-width-gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="/content/images/halloween-party/7.jpg" itemprop="contentUrl" data-size="1500x1000">
+                    <img src="/content/images/halloween-party/7.jpg" itemprop="thumbnail" alt="Image descxiption" />
+                </a>
+            </figure>
+            <figure class="third-width-gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="/content/images/halloween-party/8.jpg" itemprop="contentUrl" data-size="1500x1000">
+                    <img src="/content/images/halloween-party/8.jpg" itemprop="thumbnail" alt="Image descxiption" />
+                </a>
+            </figure>
+            <figure class="third-width-gallery-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="/content/images/halloween-party/9.jpg" itemprop="contentUrl" data-size="1500x1000">
+                    <img src="/content/images/halloween-party/9.jpg" itemprop="thumbnail" alt="Image descxiption" />
+                </a>
+            </figure>
+        </div>
+
+        <table>
+            <tr class="article-link">
+                <td>
+                    <a href="/articles/a-projected-now-playing-screen">
+                        <p>This project is related to</p>
+                        <div class="link-title">A Projected 'Now Playing' SCreen</div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+</article>
+</section>
