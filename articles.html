@@ -37,7 +37,7 @@ footerClass: footer-articles
                 {% else %}
                     <tr>
                         <td>
-                            <a href="{{article.Url}}">
+                            <a href="/articles/{{article.Url}}">
                                 <div class="posted-date">
                                     {{article.DatePosted|date_to_long_string: "ordinal" }}
                                 </div>
